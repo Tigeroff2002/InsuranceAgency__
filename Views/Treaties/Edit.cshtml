@@ -1,0 +1,79 @@
+﻿@model InsuranceAgency__.Models.Treaty
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Правка данных договора</h1>
+
+<h4>Договор</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="TypeTreaty" class="control-label"></label>
+                <input asp-for="TypeTreaty" class="form-control" />
+                <span asp-validation-for="TypeTreaty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeOfInsuranceTreaty" class="control-label"></label>
+                <input asp-for="TypeOfInsuranceTreaty" class="form-control" />
+                <span asp-validation-for="TypeOfInsuranceTreaty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PolicySeries" class="control-label"></label>
+                <input asp-for="PolicySeries" class="form-control" />
+                <span asp-validation-for="PolicySeries" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PolicyNumber" class="control-label"></label>
+                <input asp-for="PolicyNumber" class="form-control" />
+                <span asp-validation-for="PolicyNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InsurancePremium" class="control-label"></label>
+                <input asp-for="InsurancePremium" class="form-control" />
+                <span asp-validation-for="InsurancePremium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InsuranceSum" class="control-label"></label>
+                <input asp-for="InsuranceSum" class="form-control" />
+                <span asp-validation-for="InsuranceSum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfPaymentTreaty" class="control-label"></label>
+                <input asp-for="DateOfPaymentTreaty" class="form-control" />
+                <span asp-validation-for="DateOfPaymentTreaty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TreatyCurrency" class="control-label"></label>
+                <input asp-for="TreatyCurrency" class="form-control" />
+                <span asp-validation-for="TreatyCurrency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StateOfTreaty" class="control-label"></label>
+                <input asp-for="StateOfTreaty" class="form-control" />
+                <span asp-validation-for="StateOfTreaty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdClient" class="control-label"></label>
+                <input asp-for="IdClient" class="form-control" />
+                <span asp-validation-for="IdClient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" onclick=" alert('Данные успешно изменены!')"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="\Home\Index">Вернуться назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

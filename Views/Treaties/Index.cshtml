@@ -1,0 +1,85 @@
+﻿@model IEnumerable<InsuranceAgency__.Models.Treaty>
+
+@{
+    ViewData["Title"] = "Информация о договорах";
+}
+<body class="Treaty">
+    <h1>Договоры</h1>
+    <p>
+        <a asp-action="Create">Оформить новый договор</a>
+    </p>
+    <table class="tableTreaty">
+        <form id="formSearch1" method="post">
+            <div class="row" id="SearchBox">
+                <p>
+                    <input type="text" id="dateFrom" name="dateFrom" placeholder="Введите первую дату" />
+                    <input type="text" id="dateTo" name="dateTo" placeholder="Введите вторую дату" />
+                    <input type="submit" id="submitsearch" value="Поиск" />
+                </p>
+            </div>
+        </form>
+        <thead>
+            <tr>
+                <th>Номер договора</th>
+                <th>Тип страхового договора</th>
+                <th>Вид страхования</th>
+                <th>Серия полиса</th>
+                <th>Номер полиса</th>
+                <th>Страховая премия</th>
+                <th>Страховая сумма</th>
+                <th>Дата заключения договора</th>
+                <th>Валюта</th>
+                <th>Состояние договора</th>
+                <th>Номер клиента</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeTreaty)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeOfInsuranceTreaty)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PolicySeries)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PolicyNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InsurancePremium)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InsuranceSum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfPaymentTreaty)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TreatyCurrency)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StateOfTreaty)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdClient)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a href="\Home\Index">Вернуться назад</a>
+    </div>
+</body>

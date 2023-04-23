@@ -1,0 +1,121 @@
+﻿@model IEnumerable<InsuranceAgency__.Models.PersonalInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <style>
+        .row {
+            margin-left: 0.1%;
+        }
+
+        main {
+            width: 98%;
+            margin: 0 auto;
+        }
+
+        table {
+            border: solid 5px #B0C4DE;
+        }
+
+        th {
+            border: solid 5px #B0C4DE;
+        }
+
+        td {
+            border: solid 5px #B0C4DE;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        th {
+            padding: 19px;
+        }
+    </style>
+</head>
+<h1>Список отправленных персональных данных всех клиентов</h1>
+
+<table class="table">
+    <form id="formSearch5" method="post">
+        <div class="row" id="SearchBox">
+            <p>
+                <input type="text" id="PassportNumber" name="PassportNumber" placeholder="Поиск по номеру паспорта" />
+                <input type="submit" id="submitsearch" value="Поиск" />
+            </p>
+        </div>
+    </form>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassportNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassportSeries)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FIO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PassportNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PassportSeries)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a href="\Home\Index">Вернуться назад</a>
+</div>

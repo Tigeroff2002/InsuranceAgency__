@@ -1,0 +1,61 @@
+﻿@model InsuranceAgency__.Models.PaymentDocument
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PaymentDocument</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="AccountNumber" class="control-label"></label>
+                <input asp-for="AccountNumber" class="form-control" />
+                <span asp-validation-for="AccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BeneficiaryBankName" class="control-label"></label>
+                <input asp-for="BeneficiaryBankName" class="form-control" />
+                <span asp-validation-for="BeneficiaryBankName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InvoicingDate" class="control-label"></label>
+                <input asp-for="InvoicingDate" class="form-control" />
+                <span asp-validation-for="InvoicingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NameOfService" class="control-label"></label>
+                <input asp-for="NameOfService" class="form-control" />
+                <span asp-validation-for="NameOfService" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceAmount" class="control-label"></label>
+                <input asp-for="ServiceAmount" class="form-control" />
+                <span asp-validation-for="ServiceAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FIOPolicyholder" class="control-label"></label>
+                <input asp-for="FIOPolicyholder" class="form-control" />
+                <span asp-validation-for="FIOPolicyholder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentMethod" class="control-label"></label>
+                <input asp-for="PaymentMethod" class="form-control" />
+                <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="\Home\Index">Вернуться назад</a>
+</div>
+
